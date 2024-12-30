@@ -15,7 +15,7 @@ public class Student {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Student> students = new ArrayList<Student>();
 
-    public void addStudent(){
+    public  void addStudent(){
         System.out.print("Enter the Student name: ");
         name = scanner.nextLine();
 
@@ -30,14 +30,14 @@ public class Student {
 
     }
 
-    public void viewStudents(){
+    public  void viewStudents(){
         System.out.println("List of Students: ");
         for (Student student : students){
             System.out.println(student);
         }
     }
 
-    public void searchStudent(){
+    public  void searchStudent(){
         System.out.print("Enter the name of the Student to search: ");
         String searchName = scanner.nextLine();
 
@@ -47,6 +47,34 @@ public class Student {
         }
         else {
             System.out.println("Student not found!");
+        }
+    }
+
+    public  void editRecord(){
+        System.out.print("Enter the name of the student record: ");
+        String editName = scanner.nextLine();
+
+        if (students.contains(editName)){
+            System.out.println(); //to display the record here first
+
+            System.out.println("1. name \n2. age \n3. grade");
+            System.out.print("Select the item to change in the record: ");
+            int item = scanner.nextInt();
+            scanner.nextLine();
+            //I didn't know how to complete it
+
+        }
+    }
+
+    public  void deleterecord(){
+        System.out.print("enter the name of the student record:");
+        String deleteName = scanner.nextLine();
+
+        if (students.contains(deleteName)){
+            students.remove(deleteName);
+        }
+        else {
+            System.out.println("Student record not found!");
         }
     }
 }
